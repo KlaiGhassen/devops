@@ -16,7 +16,6 @@ pipeline {
                sh 'mvn compile'
            }
         }
-
           stage('mvn Test') {
             steps {
                sh 'mvn test'
@@ -27,11 +26,6 @@ pipeline {
                sh 'mvn verify'
           }
        }
-         stage('MVN CLEAN') {
-                        steps {
-                           sh 'mvn clean '
-                        }
-                    }
          stage ('Scan Sonar'){
             steps {
     sh "mvn sonar:sonar \

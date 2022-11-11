@@ -10,17 +10,12 @@ pipeline {
                     git branch: 'main', url: 'https://github.com/KlaiGhassen/devops'
                 }  
             }
-               stage('MVN CLEAN') {
-                        steps {
-                           sh 'mvn clean '
-                        }
-                    }
+              
           stage('MVN COMPILE') {
             steps {
                sh 'mvn compile'
            }
         }
-
           stage('mvn Test') {
             steps {
                sh 'mvn test'

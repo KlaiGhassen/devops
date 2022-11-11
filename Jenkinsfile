@@ -10,11 +10,7 @@ pipeline {
                     git branch: 'main', url: 'https://github.com/KlaiGhassen/devops'
                 }  
             }
-               stage('MVN CLEAN') {
-                        steps {
-                           sh 'mvn clean '
-                        }
-                    }
+              
           stage('MVN COMPILE') {
             steps {
                sh 'mvn compile'
@@ -31,6 +27,11 @@ pipeline {
                sh 'mvn verify'
           }
        }
+         stage('MVN CLEAN') {
+                        steps {
+                           sh 'mvn clean '
+                        }
+                    }
          stage ('Scan Sonar'){
             steps {
     sh "mvn sonar:sonar \

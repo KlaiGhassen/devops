@@ -10,7 +10,6 @@ pipeline {
                     git branch: 'main', url: 'https://github.com/KlaiGhassen/devops'
                 }  
             }
-              
           stage('MVN COMPILE') {
             steps {
                sh 'mvn compile'
